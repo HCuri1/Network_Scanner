@@ -4,4 +4,4 @@ import scapy.all as scapy
 
 def request (ip):
     
-    scapy.arping(ip)
+    objectRequest = scapy.ARP(pdst=ip)
