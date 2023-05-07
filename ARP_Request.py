@@ -9,14 +9,15 @@ def request (ip):
     
     arpRequest = broadcast/objectRequest
     
-    answeredList = scapy.srp(arpRequest, timeout=2)[0]
+    answeredList = scapy.srp(arpRequest, timeout=2, verbose=False)[0]
     
     exhibit(answeredList)
 
 def exhibit (answeredList):
     
+    print("IP\t\t\tMAC")
+    print("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*")
+    
     for element in answeredList:
         
-        print("IP: ", element[1].psrc)
-        print("IP: ", element[1].hwsrc)
-        print("-*-*-*-*-*-*-*-*-*-*-*-*-*")
+        print(element[1].psrc + "\t\t" + element[1].hwsrc)
