@@ -9,4 +9,4 @@ def request (ip):
     
     arpRequest = objectRequest/broadcast
     
-    answered, unanswered = scapy.srp(arpRequest)
+    answeredList, unansweredList = scapy.srp(arpRequest, timeot=1)
