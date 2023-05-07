@@ -7,9 +7,9 @@ def request (ip):
     objectRequest = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     
-    arpRequest = objectRequest/broadcast
+    arpRequest = broadcast/objectRequest
     
-    answeredList = scapy.srp(arpRequest, timeot=1)[0]
+    answeredList = scapy.srp(arpRequest, timeout=1)[0]
     
     exhibit(answeredList)
 
