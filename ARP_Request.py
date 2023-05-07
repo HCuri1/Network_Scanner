@@ -6,3 +6,5 @@ def request (ip):
     
     objectRequest = scapy.ARP(pdst=ip)
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
+    
+    arpRequest = objectRequest/broadcast
