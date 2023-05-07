@@ -8,3 +8,5 @@ def request (ip):
     broadcast = scapy.Ether(dst="ff:ff:ff:ff:ff:ff")
     
     arpRequest = objectRequest/broadcast
+    
+    answered, unanswered = scapy.srp(arpRequest)
